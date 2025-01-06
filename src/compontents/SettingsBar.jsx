@@ -98,8 +98,9 @@ export const SettingsBar = ({ setCollapsed, collapsed }) => {
   };
   return (
     <div className="settingsBar  d-flex justify-content-between gap-3 gap-md-0 align-items-center">
-      <div className="d-flex   align-items-center">
-        <Button
+      <div className="d-flex p-2  align-items-center">
+        {
+          !Settings&&  <Button
           type="text"
           icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
           onClick={() => setCollapsed(!collapsed)}
@@ -109,6 +110,8 @@ export const SettingsBar = ({ setCollapsed, collapsed }) => {
             height: 64,
           }}
         />
+        }
+      
         <h2 className="m-0 p-0">Employees</h2>
       </div>
     {
