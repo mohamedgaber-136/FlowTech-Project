@@ -67,7 +67,9 @@ ul {
   background-color: #026980; /* Custom background color */
   color: white; /* White font color */
 }
-
+#root > div > div > header{
+padding: 0 !important;
+}
 /* Form styling */
 form {
   text-align: start !important; /* Left-aligns the text in the form */
