@@ -7,14 +7,15 @@ const ImageUpload = ({setImgCheck}) => {
   const [image, setImage] = useState(null); // Store the uploaded image in state
   const [imageName, setImageName] = useState(''); // Store the image name in state
   const [isImageUploaded, setIsImageUploaded] = useState(false); // State to track image upload
-
+  const userData = JSON.parse(sessionStorage.getItem('user')) || {};
+  console.log(userData);
   const handleImageChange = (info) => {
     setImageName(info.file.name);
     setImgCheck(true)
     setImage(URL.createObjectURL(info.file)); // Create a URL to preview the image
     setIsImageUploaded(true);
     const previousValues = JSON.parse(sessionStorage.getItem('user')) || {};
-    const updatedValues = { ...previousValues, image: URL.createObjectURL(info.file) };
+    const updatedValues = { ...previousValues, image: URL.createObjectURL(info.file),imageName:info.file.name };
     sessionStorage.setItem('user', JSON.stringify(updatedValues));
   };
 
@@ -32,7 +33,7 @@ const ImageUpload = ({setImgCheck}) => {
 
   return (
     <div>
-      {!isImageUploaded && (
+      {(isImageUploaded  || !userData?.image ) && (
         <label
           className="d-flex flex-column justify-content-center align-items-center gap-3 position-relative Parentimg"
           htmlFor="uploadInput"
@@ -63,19 +64,19 @@ const ImageUpload = ({setImgCheck}) => {
           </Upload>
         </label>
       )}
-      {isImageUploaded && (
+      {(isImageUploaded || userData?.image )&& (
         <div>
           <h6 className='text-start text-dark m-0 p-0'>Added Image</h6>
           <div
             style={{ marginTop: '10px' }}
             className="d-flex align-items-center flex-column flex-md-row justify-content-center  gap-3 imageParent p-2 "
           >
-            <img src={image} alt="Uploaded Preview" className='imgUpload responsive-image ' style={{borderRadius:'15px',objectFit:'cover'}} />
+            <img src={image || userData?.image} alt="Uploaded Preview" className='imgUpload responsive-image ' style={{borderRadius:'15px',objectFit:'cover'}} />
             <div className="d-flex flex-column align-items-center justify-content-center justify-content-md-start gap-2">
               <small className='lineHeight-20 text-dark text-wrap'  style={{
       wordBreak: 'break-word', // Break words that are too long
       textAlign: 'start', // Center align the text
-    }}>{imageName}</small>
+    }}>{imageName || userData?.imageName}</small>
               <div className="d-flex justify-content-center  justify-content-md-start w-100 gap-3 align-items-center">
 
               <small className='lineHeight-20' style={{cursor:'pointer'}}  onClick={handleImageChangeClick}><SwapOutlined className='textColor' /> change</small>

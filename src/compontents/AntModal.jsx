@@ -22,7 +22,7 @@ const AntModal = ({setData}) => {
       {/* Button to trigger the modal */}
     
       <Button className='AddEmployee p-4 p-md-2 p-lg-3 p-xl-4 w-100 ' icon={<PlusOutlined />} onClick={showModal}>
-          Add New Employee
+          Add 
         </Button>
 
       {/* Modal component */}

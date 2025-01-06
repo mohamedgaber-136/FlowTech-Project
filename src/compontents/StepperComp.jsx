@@ -18,10 +18,13 @@ const StepperComp = ({onCancel,setData}) => {
   const [ImgChecked,setImgCheck]=useState(false)
   const { token } = theme.useToken();
   const [current, setCurrent] = useState(0);
+  const userData = JSON.parse(sessionStorage.getItem('user')) || {};
+
   const initialValues = {
-    name: '',
-    email: '',
-    phone: '',
+    name: userData.name ||'',
+    email: userData.email || '',
+    phone:userData.phone || '',
+    role:userData.role||'',
     image: null,
     active:false,
 
