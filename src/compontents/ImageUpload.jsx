@@ -1,7 +1,7 @@
 import { Upload, Button } from 'antd';
 import { DeleteOutlined, SwapOutlined, UploadOutlined } from '@ant-design/icons';
 import { useState } from 'react';
-import vector from '../assets/images/avatars/vector.png'
+import vector from '../assets/images/avatars/Vector.png'
 // This component handles the image upload process
 const ImageUpload = ({setImgCheck}) => {
   const [image, setImage] = useState(null); // Store the uploaded image in state
