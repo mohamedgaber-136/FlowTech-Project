@@ -1,0 +1,101 @@
+/* Base styles for the root element */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; /* Defines the default font */
+  font-weight: 400; /* Set default font weight */
+  color-scheme: light dark; /* Specifies the color scheme (light or dark) */
+  font-synthesis: none; /* Disables automatic font synthesis */
+  text-rendering: optimizeLegibility; /* Improves text rendering for legibility */
+  -webkit-font-smoothing: antialiased; /* Enables smoother font rendering on Webkit browsers */
+  -moz-osx-font-smoothing: grayscale; /* Enables font smoothing on macOS for Firefox */
+}
+
+/* Text color class for custom styling */
+.textColor {
+  color: rgba(2, 105, 128, 1) !important; /* Custom text color with important flag */
+}
+
+/* Line height class for 20px line height */
+.lineHeight-20 {
+  line-height: 20px !important; /* Enforces line-height of 20px */
+}
+
+/* Body styles */
+body {
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Styles for unordered lists (ul) */
+ul {
+  width: 100% !important; /* Ensures the list takes up the full width */
+}
+
+/* Background color class for Titles */
+.bg-Titles {
+  background-color: #F8F8F8 !important; /* Light gray background color */
+}
+
+/* Sidebar children styles (for ant-layout-sider) */
+.ant-layout-sider-children {
+  width: 100%; /* Full width */
+  display: flex; /* Flexbox layout */
+  flex-direction: column; /* Stacks items vertically */
+  justify-content: start; /* Aligns items to the top */
+  gap: 25px; /* Adds space between items */
+  align-items: center; /* Centers items horizontally */
+  padding: 100px 0 !important; /* Adds padding to the top and bottom */
+}
+
+/* Selected item styling in the Ant Design menu */
+.ant-menu-dark .ant-menu-item-selected {
+  background-color: white !important; /* Background color for selected item */
+  color: rgba(2, 105, 128, 1) !important; /* Font color for selected item */
+}
+
+/* Default font color for unselected menu items */
+.ant-menu-item {
+  color: white !important; /* Sets font color to white for unselected items */
+}
+
+/* Hover effect for menu items */
+.ant-menu-item:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important; /* Light background color on hover */
+}
+
+/* Styling for AddEmployee button */
+.AddEmployee {
+  border-radius: 50px; /* Round corners */
+  background-color: #026980; /* Custom background color */
+  color: white; /* White font color */
+}
+
+/* Form styling */
+form {
+  text-align: start !important; /* Left-aligns the text in the form */
+  line-height: 0px !important; /* Forces line height to 0px (adjust as needed) */
+}
+
+/* Upload button styling (positioned absolutely) */
+.UploadBtn {
+  position: absolute; /* Position the button absolutely */
+  top: 60%; /* Positioned 60% from the top */
+  left: 50%; /* Positioned at the horizontal center */
+  transform: translateX(-50%); /* Adjusts the element horizontally to center it */
+}
+
+/* Image parent styling */
+.imageParent {
+  border: 1px dashed grey; /* Dashed border around the image */
+  border-radius: 15px; /* Rounded corners */
+}
+
+/* Parent container for images with minimum height */
+.Parentimg {
+  min-height: 150px; /* Sets minimum height to 150px */
+}
+
+/* Responsive image styling */
+.responsive-image {
+  width: 100%; /* Ensures image width is responsive */
+  height: auto; /* Maintains aspect ratio */
+  max-width: 200px; /* Restricts image size to a maximum of 200px */
+}
