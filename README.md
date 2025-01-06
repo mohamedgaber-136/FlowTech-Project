@@ -27,7 +27,7 @@ Before starting, ensure that you have the following tools installed:
 
 1. Clone this repository to your local machine:
     ```bash
-    git clone https://github.com/yourusername/yourprojectname.git
+    git clone https://github.com/mohamedgaber-136/FlowTech-Project.git
     ```
 
 2. Navigate to the project directory:
