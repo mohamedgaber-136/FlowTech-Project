@@ -66,11 +66,11 @@ The UI components are styled using **Ant Design**. You can easily customize them
 
 Here are some screenshots of the project:
 
-![Screenshot 1](../flowtech-crud/src/assets/images/screens/Screenshot%202025-01-06%20191244.png)
+![Screenshot 1](/src/assets/images/screens/Screenshot%202025-01-06%20191244.png)
 
-![Screenshot 2](../flowtech-crud/src/assets/images/screens/Screenshot%202025-01-06%20191258.png)
+![Screenshot 2](/src/assets/images/screens/Screenshot%202025-01-06%20191258.png)
 
-![Screenshot 3](../flowtech-crud/src/assets/images/screens/Screenshot%202025-01-06%20191427.png)
+![Screenshot 3](/src/assets/images/screens/Screenshot%202025-01-06%20191427.png)
 
 ## Contributing
 
