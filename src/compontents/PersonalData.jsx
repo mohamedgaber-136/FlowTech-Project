@@ -10,6 +10,7 @@ const validationSchema = Yup.object({
   email: Yup.string().email('Invalid email address').required('Please enter your email'),
   phone: Yup.string().required('Please enter your phone number'),
   role: Yup.string().required('Please select a role'),
+  date:Yup.date().required('Please select a date')
 });
 
 const PersonalData = ({ onFormDataChange, initialValues }) => {

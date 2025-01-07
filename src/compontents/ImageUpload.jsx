@@ -33,7 +33,7 @@ const ImageUpload = ({setImgCheck}) => {
 
   return (
     <div>
-      {(isImageUploaded  || !userData?.image ) && (
+      {(!isImageUploaded  || !userData?.image ) && (
         <label
           className="d-flex flex-column justify-content-center align-items-center gap-3 position-relative Parentimg"
           htmlFor="uploadInput"
@@ -69,7 +69,7 @@ const ImageUpload = ({setImgCheck}) => {
           <h6 className='text-start text-dark m-0 p-0'>Added Image</h6>
           <div
             style={{ marginTop: '10px' }}
-            className="d-flex align-items-center flex-column flex-md-row justify-content-center  gap-3 imageParent p-2 "
+            className="d-flex align-items-center flex-column flex-md-row justify-content-center justify-content-md-start gap-3 imageParent p-2 "
           >
             <img src={image || userData?.image} alt="Uploaded Preview" className='imgUpload responsive-image ' style={{borderRadius:'15px',objectFit:'cover'}} />
             <div className="d-flex flex-column align-items-center justify-content-center justify-content-md-start gap-2">

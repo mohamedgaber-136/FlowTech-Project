@@ -81,25 +81,34 @@ const TableData = () => {
       key: 'action',
       width: 30,
       render: (record) => (
-        <Space size="middle">
-          <Popconfirm
-            title="Delete the Employee"
-            description="Are you sure to delete this Employee?"
-            onConfirm={() => confirm(record)}
-            onCancel={cancel}
-            okText="Yes"
-            cancelText="No"
-          >
-            <DeleteOutlined
-              className="text-secondary"
-              size={50}
-              onClick={(e) => e.stopPropagation()} // Prevent row click from being triggered
-            />
-          </Popconfirm>
-        </Space>
+        <div onClick={(e) => e.stopPropagation()} className="action-column">
+          <Space size="middle">
+            <Popconfirm
+              title="Delete the Employee"
+              description="Are you sure to delete this Employee?"
+              onConfirm={(e) => {
+                e.stopPropagation(); // Stop propagation here
+                confirm(record);
+              }}
+              onCancel={(e) => {
+                e.stopPropagation(); // Stop propagation here
+                cancel();
+              }}
+              okText="Yes"
+              cancelText="No"
+            >
+              <DeleteOutlined
+                className="text-secondary"
+                size={50}
+                onClick={(e) => e.stopPropagation()} // Prevent row click from being triggered
+              />
+            </Popconfirm>
+          </Space>
+        </div>
       ),
     },
   ];
+  
   
   
 
@@ -136,17 +145,15 @@ const TableData = () => {
   scroll={{ x: 'max-content' }}
   onRow={(record, rowIndex) => ({
     onClick: (event) => {
-      // Check if the click is inside the actions column
-      const actionsColumnIndex = columns.length - 1; // Last column index
-      const targetColumnIndex = event.target.closest('td')?.cellIndex;
-
-      // If not the actions column, navigate
-      if (targetColumnIndex !== actionsColumnIndex) {
-        navigate(`/employee/${record.id }`); // Navigate to the route with the record ID
+      if (!event.target.closest('.action-column')) {
+        navigate(`/employee/${record.id}`);
       }
     },
   })}
 />
+
+
+
 
     </div>
   );
